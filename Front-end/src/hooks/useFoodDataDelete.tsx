@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://cardapiou.onrender.com";
 
 const deleteData = async (id: number) => {
   return await axios.delete(`${API_URL}/food/${id}`);
