@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.btn-novo {
+  background-color: #ff6b6b;
+  color: white;
+  width: 70px;
+  height: 70px;
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  border: none;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  cursor: pointer;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-novo::before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #ff6b6b;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn-novo:hover::before {
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+.btn-novo:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.6);
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 70px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57);
+  transition: width 0.4s ease;
+}
+
+h1:hover {
+  color: #ff6b6b;
+}
+
+h1:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 560px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .btn-novo {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
