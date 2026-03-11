@@ -3,7 +3,7 @@ import type { FoodCreate  } from "../interface/FoodData";
 import { useQueryClient } from "@tanstack/react-query";
 import { useMutation } from "@tanstack/react-query";
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://cardapiou.onrender.com";
 
 const postData = async (data: FoodCreate ) => {
   return await axios.post(API_URL + "/food", data);
